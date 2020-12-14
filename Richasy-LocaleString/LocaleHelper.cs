@@ -14,6 +14,10 @@ namespace Richasy.LocaleString.UWP
         internal static ResourceLoader OtherResourceLoader;
         private static LocaleConfig _config;
 
+        /// <summary>
+        /// 初始化帮助类
+        /// </summary>
+        /// <param name="config"></param>
         public void Load(LocaleConfig config)
         {
             if (config == null)
@@ -22,6 +26,9 @@ namespace Richasy.LocaleString.UWP
             Refresh();
         }
 
+        /// <summary>
+        /// 刷新帮助类
+        /// </summary>
         public void Refresh()
         {
             if (_config == null)
@@ -47,6 +54,11 @@ namespace Richasy.LocaleString.UWP
             {}
         }
 
+        /// <summary>
+        /// 获取指定字符串
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <returns></returns>
         public string GetString(string key)
         {
             if (_config == null)
@@ -72,17 +84,34 @@ namespace Richasy.LocaleString.UWP
             return result;
         }
 
+        /// <summary>
+        /// 获取指定字符串
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="property">属性</param>
+        /// <returns></returns>
         public string GetString(string key,string property)
         {
             string name = $"{key}/{property}";
             return GetString(name);
         }
 
+        /// <summary>
+        /// 获取指定字符串
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <returns></returns>
         public string GetString(Enum key)
         {
             return GetString(key.ToString());
         }
 
+        /// <summary>
+        /// 获取指定字符串
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="property">属性</param>
+        /// <returns></returns>
         public string GetString(Enum key, string property)
         {
             string name = $"{key}/{property}";
